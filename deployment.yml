@@ -30,5 +30,5 @@ spec:
               containerPort: 80
       volumes:
       - name: imc-volume
-      persistentVolumeClaim:
-        claimName: local-path-pvc
+        persistentVolumeClaim:
+           claimName: local-path-pvc
