@@ -18,8 +18,6 @@ spec:
       containers:
         - name: imc-assignment-app
           image: avk999/imc_assignment:latest
-          imagePullSecrets:
-          - name: regcred
           imagePullPolicy: IfNotPresent
           env:
             - name: OUTPUTS
@@ -30,6 +28,9 @@ spec:
           ports:
             - name: imc-assignment
               containerPort: 80
+      imagePullSecrets:
+      - name: regcred
+
       volumes:
       - name: imc-volume
         persistentVolumeClaim:
