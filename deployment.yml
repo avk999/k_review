@@ -26,7 +26,7 @@ spec:
           - name: imc-volume
             mountPath: /outputs
           ports:
-            - name: imc_assignment
+            - name: imc-assignment
               containerPort: 80
       volumes:
       - name: imc-volume
