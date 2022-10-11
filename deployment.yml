@@ -19,6 +19,9 @@ spec:
         - name: imc-assignment-app
           image: avk999/imc_assignment:latest
           imagePullPolicy: IfNotPresent
+          env:
+            - name: OUTPUTS
+              value: /outputs
           volumeMounts:
           - name: imc-volume
             mountPath: /outputs
