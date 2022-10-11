@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: imc-assignment-app
-          image: avk999/imc_assignment:latest
+          image: docker.io/avk999/imc_assignment:latest
           imagePullPolicy: IfNotPresent
           env:
             - name: OUTPUTS
