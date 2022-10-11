@@ -1,0 +1,31 @@
+piVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imc-assignment-deployment
+  namespace: imc
+  labels:
+    app: imc-assignment-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imc-assignment-app
+  template:
+    metadata:
+      labels:
+        app: imc-assignment-app
+    spec:
+      containers:
+        - name: imc-assignment-app
+          image: avk999/imc_assignment:latest
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+          - name: imc-volume
+            mountPath: /outputs
+          ports:
+            - name: imc_assignment
+              containerPort: 80
+      volumes:
+      - name: imc-volume
+      persistentVolumeClaim:
+        claimName: local-path-pvc

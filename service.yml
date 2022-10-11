@@ -1,0 +1,14 @@
+kind: Service
+metadata:
+  name: imc-assignment-svc
+  namespace: imc
+  labels:
+    service: imc-assignment-service
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+  selector:
+    app: imc-assignment-app
